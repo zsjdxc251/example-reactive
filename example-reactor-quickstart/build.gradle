@@ -1,0 +1,7 @@
+
+
+
+dependencies {
+
+    compile group: 'io.projectreactor', name: 'reactor-core', version: reactorVersion
+}

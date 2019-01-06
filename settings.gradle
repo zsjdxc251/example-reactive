@@ -1,0 +1,6 @@
+rootProject.name = 'example-reactive'
+include 'example-reactor-quickstart'
+include 'example-webflux-quickstart'
+include 'example-rxjava-quickstart'
+include 'example-vertx-quickstart'
+
