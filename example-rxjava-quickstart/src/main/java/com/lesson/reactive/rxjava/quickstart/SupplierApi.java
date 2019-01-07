@@ -4,6 +4,10 @@ import io.reactivex.Flowable;
 import io.reactivex.Observable;
 import io.reactivex.Single;
 import io.reactivex.subjects.*;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+
+import java.util.concurrent.Future;
 
 /**
  *
@@ -27,6 +31,7 @@ import io.reactivex.subjects.*;
  * @author zhengshijun
  * @version created on 2019/1/6.
  */
+@Slf4j
 public class SupplierApi {
 
 
@@ -34,39 +39,13 @@ public class SupplierApi {
     public static void main(String[] args){
 
 
-
-        Flowable<String> flowable = Flowable.just("","");
-
-        Single<String> single = Single.just("");
-
-
-        Observable<String> observable = Observable.just("","");
-
-        Observable<String>  subject = Subject.just("","");
-
-        Observable.create((value)->{
-
-            value.onNext("123123");
-
-        }).subscribe(value->{
+        Observable.never().subscribe(value->{
             System.out.println(value);
+        },throwable -> {
+            log.error(StringUtils.EMPTY,throwable);
         });
 
 
-
-
-        Observable<String> asyncSubject = AsyncSubject.just("","");
-
-
-
-        Observable<String> behaviorSubject = BehaviorSubject.just("","");
-
-
-
-        Observable<String> publishSubject = PublishSubject.just("","");
-
-
-        Observable<String> replaySubject = ReplaySubject.just("","");
 
     }
 }
