@@ -11,6 +11,19 @@ import io.reactivex.subjects.*;
  *  {@link java.util.function.Supplier}
  *
  *
+ *  create 方式
+ *
+ *  {@link Flowable}
+ *  {@link Single}
+ *
+ *  {@link Observable}
+ *    {@link Subject}
+ *      {@link AsyncSubject}
+ *      {@link BehaviorSubject}
+ *      {@link PublishSubject}
+ *      {@link ReplaySubject}
+ *
+ *
  * @author zhengshijun
  * @version created on 2019/1/6.
  */
@@ -20,15 +33,30 @@ public class SupplierApi {
 
     public static void main(String[] args){
 
-        Observable<String> observable = Observable.just("","");
+
 
         Flowable<String> flowable = Flowable.just("","");
 
         Single<String> single = Single.just("");
 
+
+        Observable<String> observable = Observable.just("","");
+
         Observable<String>  subject = Subject.just("","");
 
+        Observable.create((value)->{
+
+            value.onNext("123123");
+
+        }).subscribe(value->{
+            System.out.println(value);
+        });
+
+
+
+
         Observable<String> asyncSubject = AsyncSubject.just("","");
+
 
 
         Observable<String> behaviorSubject = BehaviorSubject.just("","");
