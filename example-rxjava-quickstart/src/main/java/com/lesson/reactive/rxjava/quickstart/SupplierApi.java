@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 import java.util.concurrent.Future;
+import java.util.concurrent.TimeUnit;
 
 /**
  *
@@ -39,11 +40,7 @@ public class SupplierApi {
     public static void main(String[] args){
 
 
-        Observable.never().subscribe(value->{
-            System.out.println(value);
-        },throwable -> {
-            log.error(StringUtils.EMPTY,throwable);
-        });
+        Observable.just("1").subscribe(System.out::println);
 
 
 
