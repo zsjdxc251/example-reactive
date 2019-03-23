@@ -51,6 +51,8 @@ subprojects {
         compile group: 'org.apache.logging.log4j', name: 'log4j-api', version: log4j2Version
 
         compileOnly  group: 'org.projectlombok', name: 'lombok', version: lombokVersion
+
+        compile group: 'com.alibaba', name: 'fastjson', version: '1.2.56'
     }
 
 }
